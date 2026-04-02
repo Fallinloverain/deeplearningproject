@@ -1,0 +1,22 @@
+# Python 缓存
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# 虚拟环境（各种可能名字）
+.env/
+venv/
+env/
+.venv/
+
+# conda（防止误提交）
+anaconda3/
+envs/
+
+# 其他常见垃圾文件
+.DS_Store
