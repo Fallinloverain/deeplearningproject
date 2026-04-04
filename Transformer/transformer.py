@@ -3,13 +3,7 @@ from torch import nn
 import torch.nn.functional as F
 import math
 
-#batch, time, demension
-X = torch.randn(128, 64, 512) 
-print("Input size:", X.shape)
 
-#初始化参数
-d_model = 512
-n_head = 8
 
 class multi_head_attention(nn.Module):
     def __init__(self, d_model, n_head):
@@ -46,3 +40,16 @@ class multi_head_attention(nn.Module):
 
         output = self.w_combine(score)
         return output
+
+
+if __name__ == "__main__":
+    #batch, time, demension
+    X = torch.randn(128, 64, 512) 
+    print("Input size:", X.shape)
+
+    #初始化参数
+    d_model = 512
+    n_head = 8
+    attention = multi_head_attention(d_model, n_head)
+    output = attention(X, X, X, mask=True)
+    print("输出内容：{}，输出形状：{}".format(output,output.shape))
